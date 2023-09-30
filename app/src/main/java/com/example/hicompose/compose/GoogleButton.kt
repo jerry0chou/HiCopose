@@ -3,8 +3,10 @@ package com.example.hicompose.compose
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -35,37 +37,44 @@ import com.example.hicompose.R
 @Composable
 fun GoogleButton() {
     var clicked by remember { mutableStateOf(false) }
-    Surface(
-        onClick = {clicked = !clicked},
-        shape = RoundedCornerShape(13.dp),
-        border = BorderStroke(width = 1.dp, color = Color.LightGray),
-        color = Color.White,
-    ) {
-        Row(
-            modifier = Modifier
-                .padding(start = 12.dp, end = 12.dp, top = 12.dp, bottom = 12.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Icon(
-                tint = Color.Unspecified,
-                modifier = Modifier
-                    .size(width = 30.dp, height = 30.dp),
-                painter = painterResource(id = R.drawable.google_icon),
-                contentDescription = "Google"
-            )
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Sign up with Google", modifier = Modifier
-            )
-            if(clicked){
-                Spacer(modifier = Modifier.width(8.dp))
-                CircularProgressIndicator(
-                    modifier = Modifier.height(16.dp).width(16.dp),
-                    strokeWidth = 2.dp,
-                    color = Color.Magenta
-                )
-            }
-        }
 
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ){
+        Surface(
+            onClick = {clicked = !clicked},
+            shape = RoundedCornerShape(13.dp),
+            border = BorderStroke(width = 1.dp, color = Color.LightGray),
+            color = Color.White,
+        ) {
+            Row(
+                modifier = Modifier
+                    .padding(start = 12.dp, end = 12.dp, top = 12.dp, bottom = 12.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Icon(
+                    tint = Color.Unspecified,
+                    modifier = Modifier
+                        .size(width = 30.dp, height = 30.dp),
+                    painter = painterResource(id = R.drawable.google_icon),
+                    contentDescription = "Google"
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(text = "Sign up with Google", modifier = Modifier
+                )
+                if(clicked){
+                    Spacer(modifier = Modifier.width(8.dp))
+                    CircularProgressIndicator(
+                        modifier = Modifier.height(16.dp).width(16.dp),
+                        strokeWidth = 2.dp,
+                        color = Color.Magenta
+                    )
+                }
+            }
+
+        }
     }
+
 }
