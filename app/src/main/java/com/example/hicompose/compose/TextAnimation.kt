@@ -76,6 +76,7 @@ fun addAnimation(duration: Int = 800): ContentTransform {
     )
 }
 
+
 @OptIn(ExperimentalAnimationApi::class)
 @Preview
 @Composable
