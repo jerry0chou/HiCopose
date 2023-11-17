@@ -1,4 +1,4 @@
-# HiCopose
+# HiCompose
 
 #### video resources: https://www.youtube.com/playlist?list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebhM-r
 #### content: several code snippets of android jetpack compose 
