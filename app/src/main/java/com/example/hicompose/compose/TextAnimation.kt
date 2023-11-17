@@ -44,6 +44,7 @@ class TextViewModel : ViewModel() {
 fun TextAnimationScreen(textViewModel: TextViewModel = viewModel()) {
     val seconds by textViewModel.seconds.collectAsState(initial = "00")
 
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
